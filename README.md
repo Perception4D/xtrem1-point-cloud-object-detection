@@ -1,5 +1,25 @@
 # Point Cloud Object Detection
 
+## P4D version
+
+From this repo:
+
+```bash
+docker build --tag 'p4d-xtrem1-point-cloud-object-detection-base' ./base_image
+docker build --tag 'p4d-xtrem1-point-cloud-object-detection' .
+```
+
+From xtrem1 repo:
+
+In the docker-compose.yaml, in the point-cloud-object-detection section, change
+image: basicai/xtreme1-point-cloud-object-detection
+to
+image: p4d-xtrem1-point-cloud-object-detection
+
+```bash
+docker compose --profile model up  
+```
+
 ## Run
 
 Create base image, which is based on [OpenPCDet](https://github.com/open-mmlab/OpenPCDet):
